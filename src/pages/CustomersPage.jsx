@@ -13,7 +13,7 @@ import {
 } from "firebase/firestore"; // 💡 Firestoreの操作関数（一括書き込み用 batch 含む）
 
 import "./CustomersPage.css";
-import { CustomerEditModal } from "../components/customerEditModal";
+import { CustomerEditModal } from "../components/CustomerEditModal";
 
 export function CustomersPage() {
   const [customers, setCustomers] = useState([]);
