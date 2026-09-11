@@ -1,0 +1,198 @@
+/* 💡 薄暗い背景とモーダルの中央配置 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden; /* 💡 背景側のスクロールを完全にロックする */
+}
+
+.invoiceModalContent {
+  background: white;
+  padding: 36px;
+  border-radius: 0px;
+  width: 740px;
+  max-width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  color: black;
+  box-shadow: var(--md-elevation-2, 0 8px 30px rgba(151, 103, 80, 0.12));
+  border: 1px solid var(--color-outline, #ccc);
+  box-sizing: border-box;
+
+  overflow-y: auto;
+}
+
+.invoiceSheet {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 680px;
+  border: 2px solid #333;
+  padding: 40px;
+  background-color: #fff;
+  text-align: left;
+}
+
+.invoiceTitle {
+  text-align: center;
+  font-size: 28px;
+  font-family: "Times New Roman", YuMincho, serif;
+  margin-top: 0;
+  margin-bottom: 24px;
+  letter-spacing: 4px;
+}
+
+.invoiceHeaderInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.invoiceCustomerName {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+}
+
+.invoiceAddress,
+.invoiceContact {
+  margin: 2px 0;
+  color: #444;
+}
+
+.invoiceIssuerInfo {
+  text-align: right;
+}
+
+.invoiceIssuerInfo p {
+  margin: 2px 0;
+}
+
+.issuerName {
+  font-weight: bold;
+}
+
+.issuerAddress {
+  font-size: 12px;
+  color: #666;
+}
+
+.invoiceTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+  font-size: 13px;
+}
+
+.invoiceTable th {
+  border-bottom: 2px solid #333;
+  padding: 8px;
+  font-weight: bold;
+}
+
+.thName {
+  text-align: left;
+}
+
+.thPrice,
+.thQty,
+.thSubtotal {
+  text-align: right;
+}
+
+.invoiceTableRow td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.emptyMessage {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+}
+
+.invoiceTotalSection {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.syoukei,
+.syouhizei {
+  font-size: 12px;
+  color: #333;
+}
+
+.goukei {
+  margin-top: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #111;
+}
+
+.modalButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 32px;
+  width: 100%;
+  max-width: 680px;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: white !important;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  .invoiceSheet,
+  .invoiceSheet * {
+    visibility: visible !important;
+  }
+  /* 実際のPDFの配置設定 */
+  .invoiceSheet {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    border: 2px solid #333 !important;
+    background-color: white !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 20px !important;
+  }
+}

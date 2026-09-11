@@ -1,0 +1,96 @@
+.productsArea {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fdefca;
+  min-height: calc(100vh - 60px);
+}
+
+/* 💡 タイトルと登録ボタンを横並びにするヘッダーエリア */
+.productHeaderArea {
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.list {
+  margin-top: 10px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--color-outline, #ccc);
+  width: 800px;
+}
+
+/* 💡 4列グリッドに変更（操作ボタン用の列を追加） */
+.gridTitle {
+  display: grid;
+  grid-template-columns: 100px 1fr 120px 130px;
+  font-weight: bold;
+  padding: 10px 0;
+  border-bottom: 2px solid var(--color-outline, #ccc);
+  font-size: 14px;
+}
+
+.product {
+  display: grid;
+  grid-template-columns: 100px 1fr 120px 130px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+  align-items: center;
+  font-size: 14px;
+}
+
+/* 💡 操作ボタンエリアのスタイル */
+.productActionButtons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+/* 💡 モーダル背景（薄い黒） */
+.input-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.formGroup {
+  margin-bottom: 16px;
+}
+
+.formGroup .label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--color-on-surface, #333);
+}
+
+.formGroup .searchInput {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid var(--color-outline, #ccc);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.importbtnArea {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}

@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  gap: 400px;
+  align-items: center;
+  padding: 0px 20px;
+  height: 60px;
+
+  align-content: center;
+}
+.mainTitle {
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+.tabArea {
+  display: flex;
+  margin: auto 0 0;
+}
+
+.tab {
+  width: 200px;
+  text-align: center;
+  padding: 8px 16px;
+  border-radius: 12px 12px 0 0;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-on-surface, #976750);
+}
+
+/* 💡 1番目のタブ（納品書作成）：淡いブルー系 */
+.tab:nth-of-type(1) {
+  background-color: #cdeaf8; /* ペールブルー */
+}
+
+/* 💡 2番目のタブ（商品管理）：淡いオレンジ・イエロー系 */
+.tab:nth-of-type(2) {
+  background-color: #fdefca; /* ペールイエロー */
+}
+
+/* 💡 3番目のタブ（顧客管理）：淡いピンク・ローズ系 */
+.tab:nth-of-type(3) {
+  background-color: #f7e4e6; /* ペールピンク（全体背景と同じ系統） */
+}
+/* 💡 4番目のタブ（PDF管理）*/
+.tab:nth-of-type(4) {
+  background-color: #e4f7ef; /* ペールピンク（全体背景と同じ系統） */
+}
