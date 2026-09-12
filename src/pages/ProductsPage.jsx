@@ -333,8 +333,12 @@ export function ProductsPage() {
       </div>
       {/* 新規登録・編集共用モーダル */}
       {modalMode !== null && (
-        <div className="input-modal-overlay">
-          <div className="invoiceModalContent" style={{ width: "450px" }}>
+        <div className="input-modal-overlay" onClick={() => setModalMode(null)}>
+          <div
+            className="invoiceModalContent"
+            style={{ width: "450px" }}
+            onClick={(e) => e.stopPropagation()}
+          >
             <h2>{modalMode === "add" ? "新規商品登録" : "商品情報の変更"}</h2>
             <form
               onSubmit={handleSubmit}

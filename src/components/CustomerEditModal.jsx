@@ -16,8 +16,12 @@ export function CustomerEditModal({
   if (modalMode === null) return null;
 
   return (
-    <div className="input-modal-overlay">
-      <div className="invoiceModalContent" style={{ width: "500px" }}>
+    <div className="input-modal-overlay" onClick={() => setModalMode(null)}>
+      <div
+        className="invoiceModalContent"
+        style={{ width: "500px" }}
+        onClick={(e) => e.stopPropagation()}
+      >
         <h2>{modalMode === "add" ? "新規顧客登録" : "顧客情報の変更"}</h2>
         <form
           onSubmit={handleSubmit}

@@ -59,8 +59,8 @@ export function InvoiceModal({
   };
 
   return (
-    <div className="modal-overlay">
-      <div className="invoiceModalContent">
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="invoiceModalContent" onClick={(e) => e.stopPropagation()}>
         {/* 🖨️ 印刷対象エリア（納品書シート） */}
         <div className="invoiceSheet">
           <h1 className="invoiceTitle">納 品 書</h1>

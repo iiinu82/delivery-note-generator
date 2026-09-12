@@ -204,8 +204,14 @@ export function PdfsPage() {
 
       {/* 💡 編集モーダル */}
       {isEditModalOpen && editingInvoice && (
-        <div className="modalOverlay">
-          <div className="modalContent">
+        <div
+          className="modalOverlay"
+          onClick={() => {
+            setIsEditModalOpen(false);
+            setEditingInvoice(null);
+          }}
+        >
+          <div className="modalContent" onClick={(e) => e.stopPropagation()}>
             <h3>納品書の内容変更</h3>
 
             <div className="formGroup">
