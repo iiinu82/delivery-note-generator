@@ -261,12 +261,10 @@ export function ProductsPage() {
       {/* ヘッダーエリア */}
       <div className="productHeaderArea">
         <div>
-          <h1 className="title" style={{ margin: 0 }}>
-            商品管理
-          </h1>
+          <h1 className="title">商品管理</h1>
           <p>登録されている商品一覧 ({products.length}件)</p>
         </div>
-        <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+        <div className="rightArea">
           <button className="submitbtn btnl" onClick={handleOpenAddModal}>
             + 新規商品登録
           </button>
@@ -298,14 +296,12 @@ export function ProductsPage() {
           <div>商品コード</div>
           <div>商品名</div>
           <div>単価 (円)</div>
-          <div style={{ textAlign: "center" }}>操作</div>
+          <div className="sousa">操作</div>
         </div>
         {loading ? (
-          <p style={{ textAlign: "center", padding: "20px" }}>読み込み中...</p>
+          <p className="loadingText">読み込み中...</p>
         ) : products.length === 0 ? (
-          <p style={{ textAlign: "center", padding: "20px", color: "#888" }}>
-            商品が登録されていません
-          </p>
+          <p className="grayAlert">商品が登録されていません</p>
         ) : (
           products.map((product) => (
             <div className="product" key={product.id}>
@@ -335,15 +331,11 @@ export function ProductsPage() {
       {modalMode !== null && (
         <div className="input-modal-overlay" onClick={() => setModalMode(null)}>
           <div
-            className="invoiceModalContent"
-            style={{ width: "450px" }}
+            className="productsModalContent"
             onClick={(e) => e.stopPropagation()}
           >
             <h2>{modalMode === "add" ? "新規商品登録" : "商品情報の変更"}</h2>
-            <form
-              onSubmit={handleSubmit}
-              style={{ width: "100%", textAlign: "left", marginTop: "20px" }}
-            >
+            <form onSubmit={handleSubmit}>
               <div className="formGroup">
                 <label className="label">商品コード：</label>
                 <input
@@ -404,10 +396,7 @@ export function ProductsPage() {
                   }}
                 />
               </div>
-              <div
-                className="modalButtons"
-                style={{ justifyContent: "flex-end", marginTop: "30px" }}
-              >
+              <div className="modalButtons">
                 <button
                   type="button"
                   className="editbtn btnl"

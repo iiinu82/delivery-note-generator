@@ -290,9 +290,7 @@ export function CustomersPage() {
     <div className="customerArea">
       <div className="customerHeaderArea">
         <div>
-          <h1 className="title" style={{ margin: 0 }}>
-            顧客管理
-          </h1>
+          <h1 className="title">顧客管理</h1>
           <p>登録されている顧客一覧 ({customers.length}件)</p>
         </div>
         <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>

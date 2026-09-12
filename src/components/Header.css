@@ -7,9 +7,13 @@
 
   align-content: center;
 }
-.mainTitle {
-  font-size: 25px;
-  margin-bottom: 5px;
+
+.mainImage {
+  height: 100%;
+}
+
+.mainImage img {
+  height: 100%;
 }
 .tabArea {
   display: flex;
