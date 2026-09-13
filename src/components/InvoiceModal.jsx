@@ -9,6 +9,7 @@ export function InvoiceModal({
   selectedCustomer,
   invoiceItems,
   invoiceDate,
+  onInvoiceSaved,
 }) {
   if (!isOpen) return null;
 
@@ -50,6 +51,9 @@ export function InvoiceModal({
       };
       await addDoc(collection(db, "invoices"), invoiceData);
       console.log("Firebaseへの保存が完了しました！");
+      if (typeof onInvoiceSaved === "function") {
+        onInvoiceSaved();
+      }
       onPrint();
       onClose();
     } catch (error) {

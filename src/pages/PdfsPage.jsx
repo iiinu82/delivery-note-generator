@@ -164,14 +164,20 @@ export function PdfsPage() {
                   : "日時不明";
                 const customerName = inv.customer?.name || "（宛先未選択）";
                 const itemCount = inv.items ? inv.items.length : 0;
-                const total = inv.totalAmount || 0;
+                const subtotal =
+                  inv.items && inv.items.length > 0
+                    ? inv.items.reduce(
+                        (sum, item) => sum + (item.amount || 0),
+                        0,
+                      )
+                    : inv.totalAmount || 0;
 
                 return (
                   <tr key={inv.id} className="pdfsTableRow">
                     <td>{dateStr}</td>
                     <td>{customerName}</td>
                     <td className="alignCenter">{itemCount}種類</td>
-                    <td className="alignRight">¥{total.toLocaleString()}</td>
+                    <td className="alignRight">¥{subtotal.toLocaleString()}</td>
                     <td className="alignCenter">
                       <div className="actionButtons">
                         <button
@@ -303,6 +309,7 @@ export function PdfsPage() {
           selectedCustomer={printingInvoice.customer}
           invoiceItems={printingInvoice.items}
           invoiceDate={printingInvoice.createdAt} // 💡 記録された日時を渡す
+          onInvoiceSaved={fetchInvoices}
         />
       )}
     </div>
